@@ -42,6 +42,7 @@ public class InsertStudent extends javax.swing.JInternalFrame {
         jRadioButton4 = new javax.swing.JRadioButton();
 
         setClosable(true);
+        setVisible(true);
 
         jLabel1.setText("Nombre:");
 
@@ -115,7 +116,7 @@ public class InsertStudent extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(29, 29, 29))
         );

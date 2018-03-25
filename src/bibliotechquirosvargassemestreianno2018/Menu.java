@@ -14,8 +14,14 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
+    InsertStudent insStud;
+    InsertBook insBook;
+
     public Menu() {
         initComponents();
+        this.setVisible(true);
+        this.insStud = new InsertStudent();
+        this.insBook = new InsertBook();
     }
 
     /**
@@ -29,75 +35,53 @@ public class Menu extends javax.swing.JFrame {
 
         desktopPane = new javax.swing.JDesktopPane();
         menuBar = new javax.swing.JMenuBar();
+        editMenu = new javax.swing.JMenu();
+        student = new javax.swing.JMenuItem();
+        book = new javax.swing.JMenuItem();
+        audiovisual = new javax.swing.JMenuItem();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
         saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        book = new javax.swing.JMenuItem();
-        audiovisual = new javax.swing.JMenuItem();
-        student = new javax.swing.JMenuItem();
-        helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("File");
-
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Open");
-        fileMenu.add(openMenuItem);
-
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Save");
-        fileMenu.add(saveMenuItem);
-
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Save As ...");
-        saveAsMenuItem.setDisplayedMnemonicIndex(5);
-        fileMenu.add(saveAsMenuItem);
-
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
-            }
-        });
-        fileMenu.add(exitMenuItem);
-
-        menuBar.add(fileMenu);
 
         editMenu.setMnemonic('e');
         editMenu.setText("Registrar");
 
+        student.setText("Estudiantes");
+        student.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                studentActionPerformed(evt);
+            }
+        });
+        editMenu.add(student);
+
         book.setMnemonic('y');
         book.setText("Libros");
+        book.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookActionPerformed(evt);
+            }
+        });
         editMenu.add(book);
 
-        audiovisual.setText("Audiovisual");
+        audiovisual.setText("Material audiovisual");
         editMenu.add(audiovisual);
-
-        student.setText("Estudiante");
-        editMenu.add(student);
 
         menuBar.add(editMenu);
 
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("Help");
+        fileMenu.setMnemonic('f');
+        fileMenu.setText("Préstamos");
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
+        openMenuItem.setMnemonic('o');
+        openMenuItem.setText("Solicitud de material");
+        fileMenu.add(openMenuItem);
 
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
+        saveMenuItem.setMnemonic('s');
+        saveMenuItem.setText("Devolución de material");
+        fileMenu.add(saveMenuItem);
 
-        menuBar.add(helpMenu);
+        menuBar.add(fileMenu);
 
         setJMenuBar(menuBar);
 
@@ -105,19 +89,30 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1156, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
+    private void studentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentActionPerformed
+        if (!this.insStud.isShowing()) {
+            this.insStud.setVisible(true);
+            this.desktopPane.add(this.insStud);
+        }
+
+    }//GEN-LAST:event_studentActionPerformed
+
+    private void bookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookActionPerformed
+        if(!this.insBook.isShowing()){
+            this.insBook.setVisible(true);
+            this.desktopPane.add(this.insBook);
+        }
+    }//GEN-LAST:event_bookActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,18 +150,13 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem audiovisual;
     private javax.swing.JMenuItem book;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
-    private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
-    private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
     private javax.swing.JMenuItem student;
     // End of variables declaration//GEN-END:variables

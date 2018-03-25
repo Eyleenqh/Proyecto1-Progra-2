@@ -7,8 +7,10 @@ package domain;
 
 /**
  *
- * @author Eyleen
+ * @author Steven
  */
-public class AudiovisualMaterial {
-    
+public class AudioVisual {
+    //Atributos
+   /* private String type;
+    private */
 }
