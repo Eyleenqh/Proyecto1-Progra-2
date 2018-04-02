@@ -6,25 +6,31 @@
 package domain;
 
 /**
- *
+ * @author Steven
  * @author Eyleen
  */
-public class Book extends Material{
+public class Book {
+
     private String name;
     private String author;
-    private String area;
-    private boolean typeDigital;
-    
+    private String code;
+    private int year;
+    private int numberPages;
 
     public Book() {
+        this.name = "";
+        this.author = "";
+        this.code = "";
+        this.year = 0;
+        this.numberPages = 0;
     }
 
-    public Book(String name, String author, String area, String code, boolean typeDigital, int available) {
-        super(code, available);
+    public Book(String name, String author, String code, int year, int numberPages) {
         this.name = name;
         this.author = author;
-        this.area = area;
-        this.typeDigital = typeDigital;
+        this.code = code;
+        this.year = year;
+        this.numberPages = numberPages;
     }
 
     public String getName() {
@@ -43,25 +49,48 @@ public class Book extends Material{
         this.author = author;
     }
 
-    public String getArea() {
-        return area;
+    public String getCode() {
+        return code;
     }
 
-    public void setArea(String area) {
-        this.area = area;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public boolean isTypeDigital() {
-        return typeDigital;
+    public int getYear() {
+        return year;
     }
 
-    public void setTypeDigital(boolean typeDigital) {
-        this.typeDigital = typeDigital;
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getNumberPages() {
+        return numberPages;
+    }
+
+    public void setNumberPages(int numberPages) {
+        this.numberPages = numberPages;
     }
 
     @Override
     public String toString() {
-        return super.toString()+ " Book{" + "name=" + name + ", author=" + author + ", area=" + area + ", typeDigital=" + typeDigital + '}';
+        return name + ", Autor=" + author+ ", Año=" + year;
     }
     
+    
+    //Metodo que verifica las letras para la busqueda filtrada
+    public boolean startsWith(String chars){
+        if(chars.isEmpty() || chars.length()>this.name.length()){
+            return false;
+        }
+        
+        for(int i=0; i< chars.length(); i++){
+            if(chars.charAt(i) != this.name.charAt(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

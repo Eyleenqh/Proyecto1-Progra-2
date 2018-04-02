@@ -5,8 +5,17 @@
  */
 package bibliotechquirosvargassemestreianno2018;
 
+import File.StudentFile;
+import domain.Student;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ButtonGroup;
+import javax.swing.JOptionPane;
+
 /**
- *
+ * @author Steven
  * @author Eyleen
  */
 public class InsertStudent extends javax.swing.JInternalFrame {
@@ -14,9 +23,24 @@ public class InsertStudent extends javax.swing.JInternalFrame {
     /**
      * Creates new form InsertStudent
      */
+    File file;
+    Student student;
+    StudentFile studentFile;
+
     public InsertStudent() {
+        try {
+            file = new File("./Student.dat");
+            this.studentFile = new StudentFile(file);
+        } catch (IOException ex) {
+
+        }
         this.setTitle("Registrar estudiantes");
         initComponents();
+        this.btGroup = new ButtonGroup();
+        this.bComputing.setSelected(true);
+        this.btGroup.add(bAgronomy);
+        this.btGroup.add(bEducation);
+        this.btGroup.add(bComputing);
     }
 
     /**
@@ -28,21 +52,24 @@ public class InsertStudent extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        btGroup = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        nameText = new javax.swing.JTextField();
+        surnameText = new javax.swing.JTextField();
+        yearText = new javax.swing.JTextField();
+        btnInsert = new javax.swing.JButton();
+        bComputing = new javax.swing.JRadioButton();
+        bAgronomy = new javax.swing.JRadioButton();
+        bEducation = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        phoneNumberTxt = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        idTxt = new javax.swing.JTextField();
 
         setClosable(true);
-        setVisible(true);
 
         jLabel1.setText("Nombre:");
 
@@ -52,13 +79,22 @@ public class InsertStudent extends javax.swing.JInternalFrame {
 
         jLabel4.setText("Año de ingreso a la universidad:");
 
-        jButton1.setText("Registrar");
+        btnInsert.setText("Registrar");
+        btnInsert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInsertActionPerformed(evt);
+            }
+        });
 
-        jRadioButton1.setText("Informatica");
+        bComputing.setText("Informatica");
 
-        jRadioButton3.setText("Agronomia");
+        bAgronomy.setText("Agronomia");
 
-        jRadioButton4.setText("Educacion");
+        bEducation.setText("Educacion");
+
+        jLabel5.setText("Numero de teléfono: ");
+
+        jLabel6.setText("Cédula:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,31 +105,42 @@ public class InsertStudent extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField1))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jRadioButton4))))
+                                .addComponent(phoneNumberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(nameText))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(surnameText, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
-                        .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnInsert))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(yearText, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bComputing)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bAgronomy)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bEducation)))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,42 +148,114 @@ public class InsertStudent extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(surnameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(idTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton3)
-                    .addComponent(jRadioButton4))
-                .addGap(18, 18, 18)
+                    .addComponent(bComputing)
+                    .addComponent(bAgronomy)
+                    .addComponent(bEducation))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                    .addComponent(yearText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(phoneNumberTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addComponent(btnInsert)
                 .addGap(29, 29, 29))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
+        //Este try controla la creación del archivo
+        String careers = "";
+        String id = "";
+        try {
+            if (file.exists()) {
+            } else {
+                file.createNewFile();
+            }
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error en el procedimiento. Vuelva a intentarlo.");
+        }
+
+        //Estos if comprueba que la informacion este completa y correcta 
+        if (this.nameText.getText().isEmpty() || this.surnameText.getText().isEmpty() || this.yearText.getText().isEmpty() || this.idTxt.getText().isEmpty() || this.phoneNumberTxt.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingrese toda la información solicitada.");
+        } else {
+            if (Integer.parseInt(this.yearText.getText()) < 1000 || Integer.parseInt(this.idTxt.getText()) < 1000000 || Integer.parseInt(this.phoneNumberTxt.getText()) < 10000000) {
+                JOptionPane.showMessageDialog(this, "Por favor, ingrese información válida");
+            } else {
+                try {
+                    if (this.studentFile.verifyId(Integer.parseInt(this.idTxt.getText()))) {
+                        JOptionPane.showMessageDialog(this, "Esta cedula ya existe.");
+                    } else {
+
+                        if (bComputing.isSelected()) {
+                            careers = "Informatica";
+                            id = studentFile.createUniversityId("I", this.yearText.getText());
+                        }
+                        if (bAgronomy.isSelected()) {
+                            careers = "Agronomia";
+                            id = studentFile.createUniversityId("A", this.yearText.getText());
+                        }
+                        if (bEducation.isSelected()) {
+                            careers = "Educacion";
+                            id = studentFile.createUniversityId("E", this.yearText.getText());
+                        }
+
+                        //Estos if le da un valor a cada radio Button
+                        student = new Student(this.nameText.getText(), this.surnameText.getText(), id, careers, Integer.parseInt(this.yearText.getText()), Integer.parseInt(this.idTxt.getText()), Integer.parseInt(this.phoneNumberTxt.getText()));
+                        this.nameText.setText("");
+                        this.surnameText.setText("");
+                        this.yearText.setText("");
+                        this.idTxt.setText("");
+                        this.phoneNumberTxt.setText("");
+
+                        //Este try ingresa la informacion en la posición final del archivo
+                        try {
+                            this.studentFile.addEndRecord(student);
+                        } catch (IOException ex) {
+                            Logger.getLogger(InsertStudent.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, "Error al guardar la información. Verifique que la información esté correcta.");
+                }
+            }
+        }
+    }//GEN-LAST:event_btnInsertActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JRadioButton bAgronomy;
+    private javax.swing.JRadioButton bComputing;
+    private javax.swing.JRadioButton bEducation;
+    private javax.swing.ButtonGroup btGroup;
+    private javax.swing.JButton btnInsert;
+    private javax.swing.JTextField idTxt;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField nameText;
+    private javax.swing.JTextField phoneNumberTxt;
+    private javax.swing.JTextField surnameText;
+    private javax.swing.JTextField yearText;
     // End of variables declaration//GEN-END:variables
 }
