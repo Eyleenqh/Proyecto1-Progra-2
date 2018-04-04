@@ -26,7 +26,7 @@ public class StudentFile {
     private int countInf = 0;
     private int countAgr = 0;
     private int countEdu = 0;
-    
+
     private int count;
 
     //constructor
@@ -176,6 +176,21 @@ public class StudentFile {
     }
 
     private String Consecutive(String initial) throws IOException {
+        ArrayList<Student> students = getAllStudent();
+        Student student = new Student();
+        for (int i = 0; i < students.size() - 1; i++) {
+            student = this.getStudent(i);
+            if (student.getUniversitiId().startsWith("I")) {
+                countInf++;
+            }
+            if (student.getUniversitiId().startsWith("A")) {
+                countAgr++;
+            }
+            if (student.getUniversitiId().startsWith("E")) {
+                countEdu++;
+            }
+        }
+        
         if (initial.equals("I")) {
             this.countInf++;
             count = this.countInf;
@@ -195,23 +210,6 @@ public class StudentFile {
         consecutive = "000" + String.valueOf(count);
         consecutive2 = consecutive.substring(consecutive.length() - 3, consecutive.length());
         return consecutive2;
-        /*ArrayList<Student> students = getAllStudent();
-        String consecutive = "";
-        String lastUniversityId;
-        int part;
-        String consecutive2="";
-
-        if (students.isEmpty()) {
-            consecutive2 = "000";
-        } else {
-            lastUniversityId = students.get(students.size() - 1).getUniversitiId();
-            String part2 =lastUniversityId.substring(2, 5);
-            int part3 = Integer.parseInt(part2) ;
-            part = part3 + 1;
-            consecutive ="000"+String.valueOf(part);
-            consecutive2=consecutive.substring(consecutive.length()-3, consecutive.length());
-        }
-        return consecutive2;*/
     }
 
     public boolean verifyUniversityId(String uId) throws IOException {

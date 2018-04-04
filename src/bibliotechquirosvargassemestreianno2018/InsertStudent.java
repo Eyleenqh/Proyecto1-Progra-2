@@ -71,30 +71,30 @@ public class InsertStudent extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabel1.setText("Nombre:");
+        jLabel1.setText("Name:");
 
-        jLabel2.setText("Apellidos: ");
+        jLabel2.setText("Surnames:");
 
-        jLabel3.setText("Carrera: ");
+        jLabel3.setText("Career:");
 
-        jLabel4.setText("Año de ingreso a la universidad:");
+        jLabel4.setText("Year of income: ");
 
-        btnInsert.setText("Registrar");
+        btnInsert.setText("Register");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnInsertActionPerformed(evt);
             }
         });
 
-        bComputing.setText("Informatica");
+        bComputing.setText("Informatics");
 
-        bAgronomy.setText("Agronomia");
+        bAgronomy.setText("Agronomy");
 
-        bEducation.setText("Educacion");
+        bEducation.setText("Education");
 
-        jLabel5.setText("Numero de teléfono: ");
+        jLabel5.setText("Phone number:");
 
-        jLabel6.setText("Cédula:");
+        jLabel6.setText("Personal ID:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,7 +140,7 @@ public class InsertStudent extends javax.swing.JInternalFrame {
                         .addComponent(bAgronomy)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bEducation)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

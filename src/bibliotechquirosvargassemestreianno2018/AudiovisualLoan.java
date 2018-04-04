@@ -82,23 +82,23 @@ public class AudiovisualLoan extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabel1.setText("Carne:");
+        jLabel1.setText("University ID:");
 
-        jLabel2.setText("Marca/Nombre:");
+        jLabel2.setText("Brand/Name:");
 
         showInformation.setEditable(false);
         showInformation.setColumns(20);
         showInformation.setRows(5);
         jScrollPane1.setViewportView(showInformation);
 
-        searchBtn.setText("Buscar");
+        searchBtn.setText("Search");
         searchBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchBtnActionPerformed(evt);
             }
         });
 
-        loanBtn.setText("Solicitar Prestamo");
+        loanBtn.setText("Make the loan");
         loanBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loanBtnActionPerformed(evt);
@@ -107,13 +107,13 @@ public class AudiovisualLoan extends javax.swing.JInternalFrame {
 
         bLaptop.setText("Laptop");
 
-        bSpeaker.setText("Parlantes");
+        bSpeaker.setText("Speakers");
 
-        bCds.setText("Cd's");
+        bCds.setText("Cd");
 
-        bProjector.setText("Proyector");
+        bProjector.setText("Projector");
 
-        bDvds.setText("Dvd's");
+        bDvds.setText("Dvd");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,7 +149,7 @@ public class AudiovisualLoan extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(loanBtn)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

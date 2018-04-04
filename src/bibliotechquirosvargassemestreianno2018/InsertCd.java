@@ -62,15 +62,15 @@ public class InsertCd extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Name:");
 
-        jLabel2.setText("Memoria: ");
+        jLabel2.setText("Memory:");
 
-        jLabel3.setText("Marca:");
+        jLabel3.setText("Brand:");
 
-        jLabel4.setText("Cantidad:");
+        jLabel4.setText("Quantity:");
 
-        jLabel5.setText("Ano de publicacion: ");
+        jLabel5.setText("Year of publication:");
 
-        btnRegister.setText("Registrar");
+        btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -110,7 +110,7 @@ public class InsertCd extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(btnRegister)))
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

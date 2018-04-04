@@ -9,7 +9,7 @@ package domain;
  * @author Steven
  * @author Eyleen
  */
-public class AudiovisualMaterial {
+public class AudiovisualMaterial extends Material{
 
     private int quantity;
     private int code;
@@ -27,7 +27,6 @@ public class AudiovisualMaterial {
         this.quantity = quantity;
         this.code = code;
         this.brand = brand;
-        this.year = year;
     }
 
     public int getQuantity() {
@@ -64,7 +63,7 @@ public class AudiovisualMaterial {
 
     @Override
     public String toString() {
-        return "AudiovisualMaterial{" + "quantity=" + quantity + ", code=" + code + ", brand=" + brand + ", year=" + year + '}';
+        return "Quantity=" + quantity + ", Code=" + code + ", Brand=" + brand + super.toString();
     }
 
 }

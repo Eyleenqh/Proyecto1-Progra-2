@@ -59,22 +59,22 @@ public class InsertSpeaker extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        btnRegister.setText("Registrar");
+        btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Marca:");
+        jLabel1.setText("Brand:");
 
-        jLabel2.setText("Ano de fabricacion:");
+        jLabel2.setText("Year of production:");
 
-        jLabel3.setText("Tamano:");
+        jLabel3.setText("Size:");
 
-        jLabel4.setText("Cantiadad de parlantes unidos:");
+        jLabel4.setText("Number of speakers united:");
 
-        jLabel5.setText("Cantidad:");
+        jLabel5.setText("Quantity:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -111,7 +111,7 @@ public class InsertSpeaker extends javax.swing.JInternalFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(quantitySpText, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(168, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

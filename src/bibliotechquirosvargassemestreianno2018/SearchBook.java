@@ -5,6 +5,7 @@
  */
 package bibliotechquirosvargassemestreianno2018;
 
+import File.DigitalFile;
 import File.PhysicalFile;
 import File.StudentFile;
 import domain.Physical;
@@ -28,15 +29,17 @@ public class SearchBook extends javax.swing.JInternalFrame {
     Student student = new Student();
     Physical physical = new Physical();
     PhysicalFile phyFile;
-    ArrayList<Physical> allBooks = new ArrayList<Physical>();
+    DigitalFile digFile;
 
     public SearchBook() throws IOException {
-        this.phyFile = new PhysicalFile(new File ("./Physical.dat"));
-        allBooks = phyFile.getAllPhysical();
+        this.phyFile = new PhysicalFile(new File("./Physical.dat"));
         initComponents();
         idText.setText("");
         nameText.setText("");
         showInformation.setText("");
+        this.buttonGroup1.add(this.rdbPhysical);
+        this.buttonGroup1.add(this.rdbDigital);
+        this.rdbPhysical.setSelected(true);
     }
 
     /**
@@ -48,6 +51,7 @@ public class SearchBook extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         idText = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -56,12 +60,15 @@ public class SearchBook extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         showInformation = new javax.swing.JTextArea();
         loanBtn = new javax.swing.JButton();
+        rdbPhysical = new javax.swing.JRadioButton();
+        rdbDigital = new javax.swing.JRadioButton();
+        etInformation = new javax.swing.JLabel();
 
         setClosable(true);
 
-        jLabel1.setText("Carne':");
+        jLabel1.setText("University ID:");
 
-        jLabel2.setText("Nombre del libro:");
+        jLabel2.setText("Book name:");
 
         nameText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -69,7 +76,7 @@ public class SearchBook extends javax.swing.JInternalFrame {
             }
         });
 
-        verifyBtn.setText("Verificar");
+        verifyBtn.setText("Verify");
         verifyBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 verifyBtnActionPerformed(evt);
@@ -81,7 +88,7 @@ public class SearchBook extends javax.swing.JInternalFrame {
         showInformation.setRows(5);
         jScrollPane1.setViewportView(showInformation);
 
-        loanBtn.setText("Solicitar Prestamo");
+        loanBtn.setText("Make the loan");
         loanBtn.setEnabled(false);
         loanBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,30 +96,40 @@ public class SearchBook extends javax.swing.JInternalFrame {
             }
         });
 
+        rdbPhysical.setText("Physical");
+
+        rdbDigital.setText("Digital");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(loanBtn)
+                .addContainerGap(186, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2)
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(verifyBtn))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(rdbPhysical)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(rdbDigital))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
-                        .addComponent(loanBtn)))
-                .addContainerGap(50, Short.MAX_VALUE))
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(verifyBtn)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(etInformation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,16 +138,21 @@ public class SearchBook extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(idText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(verifyBtn))
+                    .addComponent(verifyBtn)
+                    .addComponent(etInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rdbPhysical)
+                    .addComponent(rdbDigital))
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(loanBtn)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -156,45 +178,93 @@ public class SearchBook extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_verifyBtnActionPerformed
 
     private void loanBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loanBtnActionPerformed
-       if(this.showInformation.getText().equalsIgnoreCase("")){
-           JOptionPane.showMessageDialog(this, "Primero busque un libro");
-       }else{
-        File file2 = new File("./Physical.dat");
-        PhysicalFile physicalFile;
+        if (this.showInformation.getText().equalsIgnoreCase("")) {
+            JOptionPane.showMessageDialog(this, "Primero busque un libro");
+        } else {
+            if (rdbPhysical.isSelected()) {
+                File file2 = new File("./Physical.dat");
+                PhysicalFile physicalFile;
+                try {
+                    physicalFile = new PhysicalFile(file2);
+                    int quantity = physicalFile.reduceQuantity(this.nameText.getText());
+                    physicalFile.update(this.nameText.getText(), quantity);
+                    JOptionPane.showMessageDialog(this, "Prestamo realizado exitosamente");
+                    idText.setText("");
+                    nameText.setText("");
+                    showInformation.setText("");
+                    etInformation.setText("");
+                } catch (IOException ex) {
+                    Logger.getLogger(SearchBook.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
 
-        try {
-            physicalFile = new PhysicalFile(file2);
-            int quantity = physicalFile.reduceQuantity(this.nameText.getText());
-            physicalFile.update(this.nameText.getText(), quantity);
-            idText.setText("");
-            nameText.setText("");
-            showInformation.setText("");
-        } catch (IOException ex) {
-            Logger.getLogger(SearchBook.class.getName()).log(Level.SEVERE, null, ex);
+            if (rdbDigital.isSelected()) {
+                File file2 = new File("./Digital.dat");
+                DigitalFile digitalFile;
+                try {
+                    digitalFile = new DigitalFile(file2);
+                    JOptionPane.showMessageDialog(this, "Prestamo realizado exitosamente");
+                    idText.setText("");
+                    nameText.setText("");
+                    showInformation.setText("");
+                    etInformation.setText("");
+                } catch (IOException ex) {
+                    Logger.getLogger(SearchBook.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
-       }
     }//GEN-LAST:event_loanBtnActionPerformed
 
     private void nameTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nameTextKeyReleased
         showInformation.setText("");
         String results = "";
-        
-        for(int i=0; i<allBooks.size(); i++){
-            if(allBooks.get(i).startsWith(this.nameText.getText())){
-                results=allBooks.get(i).toString()+"\n \n";
-            } 
+
+        if (rdbPhysical.isSelected()) {
+            File file2 = new File("./Physical.dat");
+            PhysicalFile physicalFile;
+            try {
+                physicalFile = new PhysicalFile(file2);
+                for (int i = 0; i < physicalFile.getAllPhysical().size(); i++) {
+                    if (physicalFile.getAllPhysical().get(i).startsWith(this.nameText.getText())) {
+                        results += physicalFile.getAllPhysical().get(i).toString() + "\n \n";
+                    }
+                    showInformation.setText(results);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(SearchBook.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-        showInformation.setText(results);
+
+        if (rdbDigital.isSelected()) {
+            File file2 = new File("./Digital.dat");
+            DigitalFile digitalFile;
+            try {
+                digitalFile = new DigitalFile(file2);
+
+                for (int i = 0; i < digitalFile.getAllDigital().size(); i++) {
+                    if (digitalFile.getAllDigital().get(i).startsWith(this.nameText.getText())) {
+                        results += digitalFile.getAllDigital().get(i).toString() + "\n \n";
+                    }
+                    showInformation.setText(results);
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(SearchBook.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_nameTextKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel etInformation;
     private javax.swing.JTextField idText;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton loanBtn;
     private javax.swing.JTextField nameText;
+    private javax.swing.JRadioButton rdbDigital;
+    private javax.swing.JRadioButton rdbPhysical;
     private javax.swing.JTextArea showInformation;
     private javax.swing.JButton verifyBtn;
     // End of variables declaration//GEN-END:variables

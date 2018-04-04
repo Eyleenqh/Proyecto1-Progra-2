@@ -58,20 +58,20 @@ public class InsertProjector extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        btnRegister.setText("Registrar");
+        btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Marca:");
+        jLabel1.setText("Brand:");
 
-        jLabel2.setText("Ano de fabricacion:");
+        jLabel2.setText("Year of production:");
 
-        jLabel3.setText("Tamano de la pantalla:");
+        jLabel3.setText("Screen size:");
 
-        jLabel4.setText("Cantidad:");
+        jLabel4.setText("Quantity:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,7 +101,7 @@ public class InsertProjector extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(btnRegister)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

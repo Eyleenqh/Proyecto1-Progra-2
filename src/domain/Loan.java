@@ -5,11 +5,14 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  * @author Steven
  * @author Eyleen
  */
-public class Loan {
-    private Student student;
+public class Loan implements Serializable{
+    Student student;
+    
  
 }

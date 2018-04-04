@@ -60,19 +60,19 @@ public class InsertDigital extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        jLabel1.setText("Nombre: ");
+        jLabel1.setText("Name:");
 
-        jLabel2.setText("Autor: ");
+        jLabel2.setText("Author:");
 
-        jLabel3.setText("Año de publicación: ");
+        jLabel3.setText("Year of publication:");
 
-        jLabel4.setText("Cantidad de páginas: ");
+        jLabel4.setText("Number of pages:");
 
-        jLabel5.setText("Formato:");
+        jLabel5.setText("Format:");
 
         formatText.setText(" ");
 
-        btnRegister.setText("Registrar");
+        btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
@@ -112,7 +112,7 @@ public class InsertDigital extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
                         .addComponent(btnRegister)))
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

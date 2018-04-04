@@ -5,9 +5,13 @@
  */
 package bibliotechquirosvargassemestreianno2018;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,20 +33,25 @@ public class Menu extends javax.swing.JFrame {
     InsertDvd insertDvd;
     SearchBook searchBook;
     AudiovisualLoan loanLaptop;
+    InputStream background;
     
     public Menu() throws IOException {
-        insertDigital=new InsertDigital();
-        insertPhysical=new InsertPhysical();
-        insertStudent=new InsertStudent();
-        insertLaptop=new InsertLaptop();
-        insertSpeaker=new InsertSpeaker();
-        insertProjector=new InsertProjector();
-        insertCd=new InsertCd();
-        insertDvd=new InsertDvd();
-        searchBook=new SearchBook();
-        loanLaptop=new AudiovisualLoan();
+        insertDigital = new InsertDigital();
+        insertPhysical = new InsertPhysical();
+        insertStudent = new InsertStudent();
+        insertLaptop = new InsertLaptop();
+        insertSpeaker = new InsertSpeaker();
+        insertProjector = new InsertProjector();
+        insertCd = new InsertCd();
+        insertDvd = new InsertDvd();
+        searchBook = new SearchBook();
+        loanLaptop = new AudiovisualLoan();
+        
+        background = this.getClass().getResourceAsStream("/image/Icon.jpg");
+        
         
         initComponents();
+        setMenuIcon(this.desktopPane, background);
     }
 
     /**
@@ -72,12 +81,16 @@ public class Menu extends javax.swing.JFrame {
         saveMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 204, 51));
+        setResizable(false);
+
+        desktopPane.setOpaque(false);
 
         editMenu.setMnemonic('e');
-        editMenu.setText("Registrar");
+        editMenu.setText("Register");
 
         bookDigital.setMnemonic('y');
-        bookDigital.setText("Libros digitales");
+        bookDigital.setText("Digital book");
         bookDigital.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookDigitalActionPerformed(evt);
@@ -85,7 +98,7 @@ public class Menu extends javax.swing.JFrame {
         });
         editMenu.add(bookDigital);
 
-        bookPhysical.setText("Libros Fisicos");
+        bookPhysical.setText("Physical book");
         bookPhysical.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookPhysicalActionPerformed(evt);
@@ -93,7 +106,7 @@ public class Menu extends javax.swing.JFrame {
         });
         editMenu.add(bookPhysical);
 
-        student.setText("Estudiante");
+        student.setText("Student");
         student.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 studentActionPerformed(evt);
@@ -113,10 +126,10 @@ public class Menu extends javax.swing.JFrame {
         menuBar.add(editMenu);
 
         helpMenu.setMnemonic('h');
-        helpMenu.setText("Registrar audiovisiuales");
+        helpMenu.setText("Audiovisual register");
 
         laptops.setMnemonic('c');
-        laptops.setText("Laptops");
+        laptops.setText("Laptop");
         laptops.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 laptopsActionPerformed(evt);
@@ -124,7 +137,7 @@ public class Menu extends javax.swing.JFrame {
         });
         helpMenu.add(laptops);
 
-        speaker.setText("Parlantes");
+        speaker.setText("Speakers");
         speaker.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 speakerActionPerformed(evt);
@@ -132,7 +145,7 @@ public class Menu extends javax.swing.JFrame {
         });
         helpMenu.add(speaker);
 
-        projector.setText("Proyectores");
+        projector.setText("Projector");
         projector.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 projectorActionPerformed(evt);
@@ -140,7 +153,7 @@ public class Menu extends javax.swing.JFrame {
         });
         helpMenu.add(projector);
 
-        cds.setText("Cd's");
+        cds.setText("Cd");
         cds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cdsActionPerformed(evt);
@@ -149,7 +162,7 @@ public class Menu extends javax.swing.JFrame {
         helpMenu.add(cds);
 
         dvds.setMnemonic('a');
-        dvds.setText("Dvd's");
+        dvds.setText("Dvd");
         dvds.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dvdsActionPerformed(evt);
@@ -160,10 +173,10 @@ public class Menu extends javax.swing.JFrame {
         menuBar.add(helpMenu);
 
         fileMenu.setMnemonic('f');
-        fileMenu.setText("Prestamos");
+        fileMenu.setText("Loan");
 
         loan.setMnemonic('o');
-        loan.setText("Libros");
+        loan.setText("Book");
         loan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loanActionPerformed(evt);
@@ -172,7 +185,7 @@ public class Menu extends javax.swing.JFrame {
         fileMenu.add(loan);
 
         saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Audiovisuales");
+        saveMenuItem.setText("Audiovisual");
         saveMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveMenuItemActionPerformed(evt);
@@ -188,20 +201,25 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setMenuIcon(JDesktopPane dp, InputStream icon){
+        try{
+            BufferedImage menuIcon = ImageIO.read(icon);
+            dp.setBorder(new MenuIcon(menuIcon));
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(desktopPane, "There is a little error whith the program.");
+        }
+    }
+    
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
@@ -210,7 +228,7 @@ public class Menu extends javax.swing.JFrame {
         if (!insertStudent.isShowing()) {
             insertStudent.setVisible(true);
             desktopPane.add(insertStudent);
-            
+
         }
     }//GEN-LAST:event_studentActionPerformed
 
@@ -222,7 +240,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_bookDigitalActionPerformed
 
     private void bookPhysicalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookPhysicalActionPerformed
-         if (!insertPhysical.isShowing()) {
+        if (!insertPhysical.isShowing()) {
             insertPhysical.setVisible(true);
             desktopPane.add(insertPhysical);
         }
@@ -243,14 +261,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_speakerActionPerformed
 
     private void projectorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_projectorActionPerformed
-       if (!insertProjector.isShowing()) {
+        if (!insertProjector.isShowing()) {
             insertProjector.setVisible(true);
             desktopPane.add(insertProjector);
         }
     }//GEN-LAST:event_projectorActionPerformed
 
     private void cdsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdsActionPerformed
-       if (!insertCd.isShowing()) {
+        if (!insertCd.isShowing()) {
             insertCd.setVisible(true);
             desktopPane.add(insertCd);
         }
@@ -264,14 +282,14 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_dvdsActionPerformed
 
     private void loanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loanActionPerformed
-       if (!searchBook.isShowing()) {
+        if (!searchBook.isShowing()) {
             searchBook.setVisible(true);
             desktopPane.add(searchBook);
         }
     }//GEN-LAST:event_loanActionPerformed
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
-      if (!loanLaptop.isShowing()) {
+        if (!loanLaptop.isShowing()) {
             loanLaptop.setVisible(true);
             desktopPane.add(loanLaptop);
         }

@@ -62,7 +62,7 @@
                       <Component id="btnRegister" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="107" max="32767" attributes="0"/>
+              <EmptySpace pref="109" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -104,17 +104,17 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre: "/>
+        <Property name="text" type="java.lang.String" value="Name:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Autor: "/>
+        <Property name="text" type="java.lang.String" value="Author:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A&#xf1;o de publicaci&#xf3;n: "/>
+        <Property name="text" type="java.lang.String" value="Year of publication:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nameText">
@@ -125,14 +125,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cantidad de p&#xe1;ginas: "/>
+        <Property name="text" type="java.lang.String" value="Number of pages:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="pagesText">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Formato:"/>
+        <Property name="text" type="java.lang.String" value="Format:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="formatText">
@@ -142,7 +142,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnRegister">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar"/>
+        <Property name="text" type="java.lang.String" value="Register"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegisterActionPerformed"/>

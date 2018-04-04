@@ -60,22 +60,22 @@ public class InsertPhysical extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        registerbtn.setText("Registrar");
+        registerbtn.setText("Register");
         registerbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 registerbtnActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("Name:");
 
-        jLabel3.setText("Autor:");
+        jLabel3.setText("Author:");
 
-        jLabel4.setText("Año de publicación:");
+        jLabel4.setText("Year of publication:");
 
-        jLabel6.setText("Cantidad: ");
+        jLabel6.setText("Quantity:");
 
-        jLabel7.setText("Cantidad de páginas:");
+        jLabel7.setText("Number of pages:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +112,7 @@ public class InsertPhysical extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(quantityText, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

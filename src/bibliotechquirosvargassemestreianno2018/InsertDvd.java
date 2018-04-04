@@ -59,22 +59,22 @@ public class InsertDvd extends javax.swing.JInternalFrame {
 
         setClosable(true);
 
-        btnRegister.setText("Registrar");
+        btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegisterActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Nombre:");
+        jLabel1.setText("Name:");
 
-        jLabel2.setText("Marca:");
+        jLabel2.setText("Brand:");
 
-        jLabel3.setText("Memoria:");
+        jLabel3.setText("Memory:");
 
-        jLabel4.setText("Cantidad:");
+        jLabel4.setText("Quantity:");
 
-        jLabel5.setText("Ano de publicacion:");
+        jLabel5.setText("Year of publication:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -112,7 +112,7 @@ public class InsertDvd extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(66, 66, 66)
                         .addComponent(btnRegister)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

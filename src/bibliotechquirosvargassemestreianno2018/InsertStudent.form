@@ -127,22 +127,22 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre:"/>
+        <Property name="text" type="java.lang.String" value="Name:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellidos: "/>
+        <Property name="text" type="java.lang.String" value="Surnames:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Carrera: "/>
+        <Property name="text" type="java.lang.String" value="Career:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="A&#xf1;o de ingreso a la universidad:"/>
+        <Property name="text" type="java.lang.String" value="Year of income: "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nameText">
@@ -153,7 +153,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnInsert">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Registrar"/>
+        <Property name="text" type="java.lang.String" value="Register"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInsertActionPerformed"/>
@@ -161,29 +161,29 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="bComputing">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Informatica"/>
+        <Property name="text" type="java.lang.String" value="Informatics"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="bAgronomy">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Agronomia"/>
+        <Property name="text" type="java.lang.String" value="Agronomy"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="bEducation">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Educacion"/>
+        <Property name="text" type="java.lang.String" value="Education"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Numero de tel&#xe9;fono: "/>
+        <Property name="text" type="java.lang.String" value="Phone number:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="phoneNumberTxt">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="C&#xe9;dula:"/>
+        <Property name="text" type="java.lang.String" value="Personal ID:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="idTxt">

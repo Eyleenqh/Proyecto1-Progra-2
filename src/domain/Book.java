@@ -9,28 +9,27 @@ package domain;
  * @author Steven
  * @author Eyleen
  */
-public class Book {
+public class Book{
 
     private String name;
     private String author;
     private String code;
-    private int year;
-    private int numberPages;
+    private int numberPages;private int year;
 
-    public Book() {
+    public Book() {  
         this.name = "";
         this.author = "";
         this.code = "";
-        this.year = 0;
         this.numberPages = 0;
+        this.year = 0;
     }
 
-    public Book(String name, String author, String code, int year, int numberPages) {
+    public Book(String name, String author, String code, int numberPages, int year) {
         this.name = name;
         this.author = author;
         this.code = code;
-        this.year = year;
         this.numberPages = numberPages;
+        this.year = year;
     }
 
     public String getName() {
@@ -57,14 +56,6 @@ public class Book {
         this.code = code;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
     public int getNumberPages() {
         return numberPages;
     }
@@ -73,9 +64,19 @@ public class Book {
         this.numberPages = numberPages;
     }
 
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return name + ", Autor=" + author+ ", Año=" + year;
+        return name + ", Author=" + author+", Year= "+ this.year;
     }
     
     

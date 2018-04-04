@@ -87,7 +87,7 @@ public class PhysicalFile {
     //obtener libro 
     public Physical getPhysical(int position) throws IOException {
         //validar la posicion 
-        if (position >= 0 && position < this.regsQuantity) {
+        if (position >= 0 && position <= this.regsQuantity) {
             //colocamos el brazo en el lugar adecuado
             randomAccessFile.seek(position * this.regSize);
 
